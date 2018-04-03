@@ -5,14 +5,40 @@
 </ion-header>
 
 <ion-content padding>
- <ion-card>
 
+  <script>
+    function cardButton(setIcon, setText){
+      var guiString = "<ion-col>";
+        + "<button ion-button icon-left clear small>";
+        + "<ion-icon name=\""+setIcon+"\"></ion-icon>";
+        + "<div>"+setIcon+"</div>";
+        + "</button>";
+        + "</ion-col>";
+        return guiString;
+    }
+
+    function createCards(newName, newDate, newDistance){
+      // set header
+      var name = "<h2>"+ newName + "</h2>";
+      var date = "<p>"+newDate+"</p>";
+      var item = "<ion-item>"+ name + date +"</ion-item>";
+
+      // set the card
+      var b1 = cardButton("pin", newDistance);
+      var b2 = cardButton ("text", "Messeges");
+      var row = "<ion-row>" + b1 + b2 + "</ion-row>";
+      var card = "<ion-card>"+item + row+"</ion-card>";
+      
+    }  
+  </script>
+
+ <ion-card>
   <ion-item>
     <ion-avatar item-start>
 
     </ion-avatar>
-    <h2>Marty McFly</h2>
-    <p>November 5, 1955</p>
+    <h2>Mark</h2>
+    <p>Wihtin 100m</p>
   </ion-item>
 
   <ion-card-content>
@@ -22,14 +48,14 @@
   <ion-row>
     <ion-col>
       <button ion-button icon-left clear small>
-        <ion-icon name="thumbs-up"></ion-icon>
-        <div>12 Likes</div>
+        <ion-icon name="pin"></ion-icon>
+        <div>Within 100m</div>
       </button>
     </ion-col>
     <ion-col>
       <button ion-button icon-left clear small>
         <ion-icon name="text"></ion-icon>
-        <div>4 Comments</div>
+        <div>Messeges</div>
       </button>
     </ion-col>
     <ion-col center text-center>
@@ -38,6 +64,6 @@
       </ion-note>
     </ion-col>
   </ion-row>
-
 </ion-card>
+
 </ion-content>
