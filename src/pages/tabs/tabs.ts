@@ -11,10 +11,11 @@ import { SettingsPage } from '../settings/settings';
 })
 export class TabsPage {
 
+  //tabs class
   tab1Root = HomePage;
   tab2Root = ContactPage;
   tab3Root = AboutPage;
-  tab4root = SettingsPage;
+  tab4Root = SettingsPage;
 
   constructor() {
 
