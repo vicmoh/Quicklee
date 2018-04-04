@@ -1,0 +1,48 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content>
+  <style>
+    /* html body seems to do nothing */
+    html, body{margin: 0;padding: 0;height: 100%;width: 100%;}
+    .centerContent{width:100%;margin-right: auto;margin-left: auto;text-align: center;color: #666;}
+    button{background: black;color: white;font-size: 150%;width: 200px;padding: 15px 15px;border-radius: 15px;margin: 7px 0px;}
+    /* button:hover{color: black; background: white;} */
+    .loginForm{  position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+    .appName{    
+      color: white;
+      border-radius: 25px;
+      border: 3px solid white;
+      padding: 20px; 
+      width: 200px;
+      height: 77px; 
+      margin-bottom: 10px;
+      font-size: 200%;
+    }
+    .appNameConstraint{
+      padding-bottom: 3em;
+    }
+    .backImage{
+      background: url(../../assets/imgs/orangeCity.jpg) no-repeat fixed 100%;
+      background-position: center;
+      background-size: cover;
+      width: 100%;
+      z-index: -1;
+    }
+  </style>
+
+  <body class="backImage">
+    <section>
+        <div class="loginForm centerContent">
+          <div class="appNameConstraint"><h1 class="appName centerContent">QUICKLEE</h1></div>         
+          <div><button (click)="goToTabsPage()">LOGIN</button></div>
+          <div><button>SIGN UP</button></div>
+        </div>
+      </section>
+  </body>
+
+</ion-content>
