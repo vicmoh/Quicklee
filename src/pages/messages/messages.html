@@ -14,30 +14,37 @@
 
 <ion-content padding>
 
-  <section>
-    <div class="from-me">
-      <p>Hey there! What's up?</p>
-    </div>
-  <div class="clear"></div>
-    <div class="from-them">
-      <p>Checking out iOS11 you know..</p>
-    </div>
-  <div class="clear"></div>
-    <div class="from-me">
-      <p>Check out this bubble!</p>
-    </div>
-  <div class="clear"></div>
-    <div class="from-them">
-      <p>It's pretty cool!</p>
-    </div>
-  <div class="clear"></div>
-    <div class="from-me">
-      <p>Yeah it's pure CSS &amp; HTML</p>
-    </div>
-  <div class="clear"></div>
-    <div class="from-them">
-      <p>Wow that's impressive. But what's even more impressive is that this bubble is really high.</p>
-    </div>
-  </section>
+  <!-- recent conversation -->
+  <ion-list >
+      <ion-list-header>
+        Recent Conversations
+      </ion-list-header>
+
+      <ion-item *ngFor="let onlineItem of onlineItems" (click)="goToChat()">
+        <ion-avatar item-start>
+          <img src="{{'../assets/imgs/avatar/'+ onlineItem?.image +'.png'}}">
+        </ion-avatar>
+        <h2>{{onlineItem?.name}}</h2>
+        <h3>{{onlineItem?.status}}</h3>
+        <p>{{onlineItem?.message}}...</p>
+      </ion-item>
+    </ion-list>
+  
+    <!-- online -->
+    <ion-list>
+      <ion-list-header>
+        Online
+      </ion-list-header>
+
+      <ion-item *ngFor="let recentItem of recentItems" (click)="goToChat()">
+        <ion-avatar item-start>
+          <img src="{{'../assets/imgs/avatar/'+ recentItem?.image +'.png'}}">
+        </ion-avatar>
+        <h2>{{recentItem?.name}}</h2>
+        <h3>{{recentItem?.status}}</h3>
+        <p>{{recentItem?.message}}...</p>
+      </ion-item>
+
+    </ion-list>
   
 </ion-content>
