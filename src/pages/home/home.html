@@ -10,7 +10,7 @@
   <ion-item>
     <ion-avatar item-start>
       <!-- <img src="{{'../assets/imgs/avatar/' + item?.image + '.jpg'}}"> -->
-      <img [src]="'../assets/imgs/avatar/' + item?.image + '.jpg'">
+      <img [src]="'../assets/imgs/avatar/' + item?.image + '.png'">
     </ion-avatar>
     <h2>{{item?.name}}</h2>
     <p>{{item?.date}}</p>
@@ -30,7 +30,7 @@
     <ion-col>
       <button ion-button icon-left clear small>
         <ion-icon name="text"></ion-icon>
-        <div>Messeges</div>
+        <div>Messege</div>
       </button>
     </ion-col>
     <ion-col center text-center>
@@ -44,7 +44,7 @@
 <!-- button for finding a friend -->
 <section>
   <style>
-    .centerContent{width:100%;margin-right: auto;margin-left: auto;text-align: center;color: #666;position:fixed;}
+    .centerContent{width:100%;margin-right: auto;margin-left: auto;text-align: center;position:fixed; bottom: 70px}
   </style>
   <div class="centerContent">
     <button ion-button round>Find Friend</button>
