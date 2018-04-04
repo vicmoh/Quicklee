@@ -7,12 +7,13 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>chat</ion-title>
+    <ion-title>Yoda</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content padding>
+  <!-- message content -->
   <section>
       <div class="from-me">
         <p>Hey there! What's up?</p>
@@ -39,3 +40,22 @@
       </div>
     </section>
 </ion-content>
+
+<ion-footer>
+  <!-- for the input -->
+  <ion-toolbar>
+    <ion-row class="message_row">
+      <ion-col col-9>
+        <ion-item no-lines>
+          <ion-input type="text" placeholder="Message" [(ngModel)]="message"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col col-3>
+        <!-- (click)="sendMessage()" [disabled]="message === ''" -->
+        <button ion-button clear color="primary">
+        Send
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>
