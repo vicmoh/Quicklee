@@ -91,14 +91,13 @@ page-chat {
   }
 
   // for the message input
-
   .user_name {
     color: #afafaf;
   }
   .message {
-      padding: 10px !important;
+      // padding: 10px !important;
       transition: all 250ms ease-in-out !important;
-      border-radius: 10px !important;
+      // border-radius: 10px !important;
       margin-bottom: 4px !important;
   }
   .my_message {

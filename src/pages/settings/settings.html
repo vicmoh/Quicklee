@@ -13,42 +13,31 @@
 
 <ion-content padding>
 
-  <style>
-    .centerContent{width:100%;margin-right: auto;margin-left: auto;text-align: center;position:fixed; bottom: 70px}
-  </Style>
+  <!-- lsit header -->
+  <ion-list-header>Profile</ion-list-header>
 
   <ion-list>
-    <!-- lsit header -->
-    <ion-list-header>Profile</ion-list-header>
-
-    <ion-item>
-      <ion-avatar></ion-avatar>
-        <img round src="../assets/imgs/avatar/profile.png">
-    </ion-item>
-    
-    <ion-item>
-      <!-- <ion-icon name="ionic" item-start></ion-icon> -->
-      Your Name here
-    </ion-item>
-
+    <!-- avatar -->
+    <ion-item><img round src="../assets/imgs/avatar/profile.png"></ion-item>
+    <!-- user name -->
+    <ion-item>Your Name here</ion-item>
   </ion-list>
 
-  <ion-list>
-    <!-- lsit header -->
-    <ion-list-header>Settings</ion-list-header>
+  <!-- lsit header -->
+  <ion-list-header>Settings</ion-list-header>
 
+  <ion-list>
+    <!-- help -->
     <ion-item>
-      <!-- <ion-icon name="ionic" item-start></ion-icon> -->
       Help Center
     </ion-item>
-
+    <!-- privacy -->
     <ion-item>
       <ion-label>Privacy Mode</ion-label>
       <ion-toggle [(ngModel)]="privacyMode"></ion-toggle>
     </ion-item>
-
+    <!-- logout -->
     <ion-item>Logout</ion-item>
-
   </ion-list>
 
 </ion-content>
