@@ -4,25 +4,25 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
- <ion-card>
+<ion-content >
+ <ion-card *ngFor="let item of items">
   <ion-item>
     <ion-avatar item-start>
 
     </ion-avatar>
-    <h2>Mark</h2>
-    <p>Wihtin 100m</p>
+    <h2>{{item?.name}}</h2>
+    <p>{{item?.date}}</p>
   </ion-item>
 
   <ion-card-content>
-    <p>Studying at Mckinnon</p>
+    <p>{{item?.status}}</p>
   </ion-card-content>
 
   <ion-row>
     <ion-col>
       <button ion-button icon-left clear small>
         <ion-icon name="pin"></ion-icon>
-        <div>Within 100m</div>
+        <div>Within {{item?.distance}}km</div>
       </button>
     </ion-col>
     <ion-col>
@@ -33,7 +33,7 @@
     </ion-col>
     <ion-col center text-center>
       <ion-note>
-        11h ago
+        {{item?.time}}h ago
       </ion-note>
     </ion-col>
   </ion-row>
