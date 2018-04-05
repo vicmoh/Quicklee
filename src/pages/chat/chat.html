@@ -12,72 +12,78 @@
 
 <ion-content #scroll padding>
   <!-- message content -->
-  
-    <style>.textToRight{text-align: right;}</style>
 
-    <div>
-      <p class="textToRight">Me, 5/1/18, 3h ago</p>
-      <div class="from-me">
-        <p>Hey there! What's up?</p>
-      </div>
-      <div class="clear"></div>
-    </div>
+  <style>.textToRight{text-align: right;}</style>
 
-    <div>
-      <p>Yoda, 5/1/18, 3h ago</p>
-      <div class="from-them">
-        <p>Checking out iOS11 you know..</p>
-      </div>
-      <div class="clear"></div>
+  <div>
+    <p class="textToRight">Me, 5/1/18, 3h ago</p>
+    <div class="from-me">
+      <p>Hey there! What's up?</p>
     </div>
+    <div class="clear"></div>
+  </div>
 
-    <div>
-      <p class="textToRight">Me, 5/1/18, 2h ago</p>
-      <div class="from-me">
-        <p>Check out this bubble!</p>
-      </div>
-      <div class="clear"></div>
+  <div>
+    <p>Yoda, 5/1/18, 3h ago</p>
+    <div class="from-them">
+      <p>Checking out iOS11 you know..</p>
     </div>
+    <div class="clear"></div>
+  </div>
 
-    <div>
-      <p>Yoda, 5/1/18, 2h ago</p>
-      <div class="from-them">
-        <p>It's pretty cool!</p>
-      </div>
-      <div class="clear"></div>
+  <div>
+    <p class="textToRight">Me, 5/1/18, 2h ago</p>
+    <div class="from-me">
+      <p>Check out this bubble!</p>
     </div>
-  
-    <div>
-      <p class="textToRight">Me, 5/1/18, 1h ago</p>
-      <div class="from-me">
-        <p>Yeah it's pure CSS &amp; HTML</p>
-      </div>
-      <div class="clear"></div>
-    </div>
+    <div class="clear"></div>
+  </div>
 
-    <div>
-      <p>Yoda, 5/1/18, 1h ago</p>
-      <div class="from-them">
-        <p>Wow that's impressive. But what's even more impressive is that this bubble is really high.</p>
-      </div>
-      <div class="clear"></div>
+  <div>
+    <p>Yoda, 5/1/18, 2h ago</p>
+    <div class="from-them">
+      <p>It's pretty cool!</p>
     </div>
+    <div class="clear"></div>
+  </div>
 
-    <div *ngFor="let text of listOfTexts">
-      <p class="textToRight">Me, 5/1/18, 1m ago</p>
-      <div class="from-me">
-        <p>{{text}}</p>
-      </div>
-      <div class="clear"></div>
+  <div>
+    <p class="textToRight">Me, 5/1/18, 1h ago</p>
+    <div class="from-me">
+      <p>Yeah it's pure CSS &amp; HTML</p>
     </div>
-    
+    <div class="clear"></div>
+  </div>
+
+  <div>
+    <p>Yoda, 5/1/18, 1h ago</p>
+    <div class="from-them">
+      <p>Wow that's impressive. But what's even more impressive is that this bubble is really high.</p>
+    </div>
+    <div class="clear"></div>
+  </div>
+
+  <div *ngFor="let text of listOfTexts">
+    <p class="textToRight">Me, 5/1/18, 1m ago</p>
+    <div class="from-me">
+      <p>{{text}}</p>
+    </div>
+    <div class="clear"></div>
+  </div>
+
+
+
 </ion-content>
 
 <ion-footer>
+  <style>
+    .iconSize{font-size: 250%; padding-top: 10px;padding-left: 10px;}
+  </style>
   <!-- for the input -->
   <ion-toolbar>
     <ion-row class="message_row">
-      <ion-col col-9>
+      <ion-icon class="iconSize vCenter"name="add-circle" (click)="presentActionSheet()"></ion-icon>
+      <ion-col col-7> 
         <ion-item>
           <ion-input type="text" placeholder="Message" [(ngModel)]="message"></ion-input>
         </ion-item>
