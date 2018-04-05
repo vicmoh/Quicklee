@@ -10,10 +10,9 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content #scroll padding>
   <!-- message content -->
-
-
+  
     <style>.textToRight{text-align: right;}</style>
 
     <div>
@@ -61,12 +60,13 @@
       <div class="from-them">
         <p>Wow that's impressive. But what's even more impressive is that this bubble is really high.</p>
       </div>
+      <div class="clear"></div>
     </div>
 
     <div *ngFor="let text of listOfTexts">
       <p class="textToRight">Me, 5/1/18, 1m ago</p>
       <div class="from-me">
-        <p>{{text}} &amp; HTML</p>
+        <p>{{text}}</p>
       </div>
       <div class="clear"></div>
     </div>
