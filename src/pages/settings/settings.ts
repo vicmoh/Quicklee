@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoginPage } from '../login/login';
+import { TabsPage } from '../tabs/tabs';
 
 /**
  * Generated class for the SettingsPage page.
@@ -24,7 +25,7 @@ export class SettingsPage {
   }
 
   logout(){
-    this.navCtrl.push(LoginPage);
+    this.navCtrl.popToRoot ();
+    this.navCtrl.setRoot (LoginPage);
   }
-
 }
