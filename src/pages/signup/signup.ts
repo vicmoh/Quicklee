@@ -15,6 +15,9 @@ import { TabsPage } from '../tabs/tabs';
   templateUrl: 'signup.html',
 })
 export class SignupPage {
+  //dec vars
+  firstName: string;
+  lastName: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -24,6 +27,14 @@ export class SignupPage {
   }
 
   goToTabs(){
+    //save the person name
+    console.log("firstName = " + this.firstName + ", lastName = " + this.lastName);
+    var person = {
+      firstName: this.firstName,
+      lastName: this.lastName
+    };
+    var personString = JSON.stringify(person);
+    localStorage.setItem('person', personString);
     this.navCtrl.push(TabsPage);
   }
 

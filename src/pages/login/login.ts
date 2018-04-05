@@ -27,6 +27,11 @@ export class LoginPage {
   goToTabsPage(): void{
     // got to home page
     console.log("calling loginButtonEvent");
+    var person = {
+      firstName: "Guest",
+      lastName: "User"
+    }
+    localStorage.setItem('person', JSON.stringify(person));
     this.navCtrl.push(TabsPage)
   }//end func
   

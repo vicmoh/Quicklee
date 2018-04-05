@@ -19,12 +19,12 @@
     <!-- name -->
     <ion-item>
       <ion-label fixed>First Name</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="firstName"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label fixed>Last Name</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="lastName"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -35,8 +35,8 @@
     <ion-item>
       <ion-label>Gender</ion-label>
       <ion-select [(ngModel)]="gender">
-        <ion-option value="f">Female</ion-option>
         <ion-option value="m">Male</ion-option>
+        <ion-option value="f">Female</ion-option>
         <ion-option value="u">Other</ion-option>
       </ion-select>
     </ion-item>

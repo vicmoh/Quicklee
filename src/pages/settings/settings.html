@@ -17,10 +17,12 @@
   <ion-list-header>Profile</ion-list-header>
 
   <ion-list>
+    <style>.center{margin: auto; text-align: center;}</style>
     <!-- avatar -->
     <ion-item><img round src="../assets/imgs/avatar/profile.png"></ion-item>
     <!-- user name -->
-    <ion-item>Your Name here</ion-item>
+    <ion-item class="center">{{person?.firstName}} {{person?.lastName}}</ion-item>
+    <ion-item class="center">575 Friends</ion-item>
   </ion-list>
 
   <!-- lsit header -->
