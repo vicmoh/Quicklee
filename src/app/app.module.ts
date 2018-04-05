@@ -10,10 +10,11 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { SettingsPage } from '../pages/settings/settings';
 import { MessagesPage } from '../pages/messages/messages';
 import { ChatPage } from '../pages/chat/chat';
-
+ 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
+import { SignupPage } from '../pages/signup/signup';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LoginPage } from '../pages/login/login';
     SettingsPage,
     LoginPage,
     MessagesPage,
-    ChatPage
+    ChatPage,
+    SignupPage
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,8 @@ import { LoginPage } from '../pages/login/login';
     SettingsPage,
     LoginPage,
     MessagesPage,
-    ChatPage
+    ChatPage,
+    SignupPage
   ],
   providers: [
     StatusBar,

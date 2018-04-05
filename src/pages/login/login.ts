@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
+import { SignupPage } from '../signup/signup';
 
 /**
  * Generated class for the LoginPage page.
@@ -27,8 +28,10 @@ export class LoginPage {
     // got to home page
     console.log("calling loginButtonEvent");
     this.navCtrl.push(TabsPage)
-  }
+  }//end func
   
-  
+  goToSignupPage(){
+    this.navCtrl.push(SignupPage);
+  }//end func
 
-}
+}//end class
