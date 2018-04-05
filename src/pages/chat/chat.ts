@@ -15,11 +15,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ChatPage {
 
+  listOfTexts: any[];
+  message: string;
+  text: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ChatPage');
   }
+
+  sendMessage(){
+    //get the ngModal input message and send 
+    this.text = this.message;
+    this.message = "";
+    console.log("text message = " + this.text);
+    this.listOfTexts.push(this.text);
+  }//end func
 
 }

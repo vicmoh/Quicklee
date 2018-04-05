@@ -16,39 +16,59 @@
 
     <style>.textToRight{text-align: right;}</style>
 
-    <p class="textToRight">Me, 5/1/18, 3h ago</p>
-    <div class="from-me">
-      <p>Hey there! What's up?</p>
+    <div>
+      <p class="textToRight">Me, 5/1/18, 3h ago</p>
+      <div class="from-me">
+        <p>Hey there! What's up?</p>
+      </div>
+      <div class="clear"></div>
     </div>
-    <div class="clear"></div>
 
-    <p>Yoda, 5/1/18, 3h ago</p>
-    <div class="from-them">
-      <p>Checking out iOS11 you know..</p>
+    <div>
+      <p>Yoda, 5/1/18, 3h ago</p>
+      <div class="from-them">
+        <p>Checking out iOS11 you know..</p>
+      </div>
+      <div class="clear"></div>
     </div>
-    <div class="clear"></div>
 
-    <p class="textToRight">Me, 5/1/18, 2h ago</p>
-    <div class="from-me">
-      <p>Check out this bubble!</p>
+    <div>
+      <p class="textToRight">Me, 5/1/18, 2h ago</p>
+      <div class="from-me">
+        <p>Check out this bubble!</p>
+      </div>
+      <div class="clear"></div>
     </div>
-    <div class="clear"></div>
 
-    <p>Yoda, 5/1/18, 2h ago</p>
-    <div class="from-them">
-      <p>It's pretty cool!</p>
+    <div>
+      <p>Yoda, 5/1/18, 2h ago</p>
+      <div class="from-them">
+        <p>It's pretty cool!</p>
+      </div>
+      <div class="clear"></div>
     </div>
-    <div class="clear"></div>
   
-    <p class="textToRight">Me, 5/1/18, 1h ago</p>
-    <div class="from-me">
-      <p>Yeah it's pure CSS &amp; HTML</p>
+    <div>
+      <p class="textToRight">Me, 5/1/18, 1h ago</p>
+      <div class="from-me">
+        <p>Yeah it's pure CSS &amp; HTML</p>
+      </div>
+      <div class="clear"></div>
     </div>
-    <div class="clear"></div>
 
-    <p>Yoda, 5/1/18, 1h ago</p>
-    <div class="from-them">
-      <p>Wow that's impressive. But what's even more impressive is that this bubble is really high.</p>
+    <div>
+      <p>Yoda, 5/1/18, 1h ago</p>
+      <div class="from-them">
+        <p>Wow that's impressive. But what's even more impressive is that this bubble is really high.</p>
+      </div>
+    </div>
+
+    <div *ngFor="let text of listOfTexts">
+      <p class="textToRight">Me, 5/1/18, 1m ago</p>
+      <div class="from-me">
+        <p>{{text}} &amp; HTML</p>
+      </div>
+      <div class="clear"></div>
     </div>
     
 </ion-content>
@@ -57,19 +77,15 @@
   <!-- for the input -->
   <ion-toolbar>
     <ion-row class="message_row">
-      
       <ion-col col-9>
         <ion-item>
-          <!-- [(ngModel)]="message" -->
-          <ion-input type="text" placeholder="Message"></ion-input>
+          <ion-input type="text" placeholder="Message" [(ngModel)]="message"></ion-input>
         </ion-item>
       </ion-col>
-
       <ion-col col-3>
         <!-- (click)="sendMessage()" [disabled]="message === ''" -->
-        <button ion-button clear>SEND</button>
+        <button ion-button clear (click)="sendMessage()">SEND</button>
       </ion-col>
-
     </ion-row>
   </ion-toolbar>
 </ion-footer>
