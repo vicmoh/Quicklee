@@ -4,51 +4,27 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content >
-  <!-- card -->
- <ion-card *ngFor="let item of items">
-  <ion-item>
-    <ion-avatar item-start>
-      <!-- <img src="{{'../assets/imgs/avatar/' + item?.image + '.jpg'}}"> -->
-      <img [src]="'../assets/imgs/avatar/' + item?.image + '.png'">
-    </ion-avatar>
-    <h2>{{item?.name}}</h2>
-    <p>{{item?.date}}</p>
-  </ion-item>
-  <!-- card status -->
-  <ion-card-content>
-    <p>{{item?.status}}</p>
-  </ion-card-content>
-  <!-- card buttons -->
-  <ion-row>
-    <ion-col>
-      <button ion-button icon-left clear small>
-        <ion-icon name="pin"></ion-icon>
-        <div>Within {{item?.distance}}km</div>
-      </button>
-    </ion-col>
-    <ion-col>
-      <button ion-button icon-left clear small>
-        <ion-icon name="text"></ion-icon>
-        <div>Messege</div>
-      </button>
-    </ion-col>
-    <ion-col center text-center>
-      <ion-note>
-        {{item?.time}}h ago
-      </ion-note>
-    </ion-col>
-  </ion-row>
-</ion-card>
+<ion-content>
+  <style>
+    .mapSize{
+      object-fit: cover;
+      height: 700px;
+      width: 700px;
+      position: fixed;
+      z-index: -2;
+    }  
+  </style>
 
-<!-- empty -->
-<section class="blank"></section>
+  <ion-scroll scrollX="true" scrollY="true" zoom="true" overflow-scroll="false" class="scroll-view mapSize" min-zoom="1" maxZoom="10">
+    <img round src="../assets/imgs/mapHD.png" class="mapSize">    
+  </ion-scroll>
+</ion-content>
 
 <!-- button for finding a friend -->
 <ion-footer>
-  <div class="centerContent">
-    <button ion-button round>Find Friend</button>
-  </div>
+  <ion-item class="centerContent">
+    <ion-label>Available</ion-label>
+    <ion-toggle [(ngModel)]="privacyMode"></ion-toggle>
+  </ion-item>
 </ion-footer>
 
-</ion-content>
