@@ -45,10 +45,11 @@
     .transparent{
       opacity: 0.9;
     }
+    .fadein-out-border{ transition: 1s ease-in-out all;}
   </style>
 
   <!-- show the profile -->
-  <ion-item *ngFor="let profile of profiles" class="profilePrositon">
+  <ion-item *ngFor="let profile of profiles" class="profilePrositon fadein-out-border">
     <ion-avatar item-start round>
       <img [src]="'../assets/imgs/avatar/' + profile?.image + '.png'">
     </ion-avatar>
@@ -58,14 +59,18 @@
       <button ion-button icon-left clear small (click)="closeProfile()">Cancel</button>
     </ion-col>
     <ion-col>
-      <button ion-button icon-left clear small>Accept</button>
+      <button ion-button icon-left clear small (click)="showAccept()">Accept</button>
     </ion-col>
   </ion-item>
 
   <!-- <img round src="../assets/imgs/pin.png" class="location1 pin">
   <img round src="../assets/imgs/pin.png" class="location2 pin">
   <img round src="../assets/imgs/pin.png" class="location3 pin">   -->
-  <img  *ngFor="let pin of pins" round [src]="pin?.image" [class]="pin?.location" (click)="getPerson1()">
+  <section *ngFor="let pin of pins">
+    <img round [src]="pin?.image" class="location1 pin" (click)="getPerson1()">
+    <img round [src]="pin?.image" class="location2 pin" (click)="getPerson2()">
+    <img round [src]="pin?.image" class="location3 pin" (click)="getPerson3()">
+  </section>
 
   <ion-scroll scrollX="true" scrollY="true" zoom="true" overflow-scroll="false" class="scroll-view mapSize" min-zoom="1" maxZoom="10">
     <img round src="../assets/imgs/mapHD.png" class="mapSize">    
