@@ -9,10 +9,15 @@ export class HomePage {
   //vars
   items: any[];
   item: any;
+  pins: any[];
+  pin: any;
+  privacyMode: any;
 
   //constructor
   constructor(public navCtrl: NavController) {
     this.items = [];
+    this.pins = [];
+    this.privacyMode = false;
     //date
     var tempDate = "April 1, 2018";
     var item;
@@ -26,7 +31,19 @@ export class HomePage {
     item = this.addItem("Vic Developer", tempDate, "Pi lab is my home.", 1, 1, "vic");
     console.log(item);
     this.items.push(item);
+    if(this.privacyMode == true){
+      this.addPin();
+    }else{
+      this.pins.pop();
+    }
   }//end constructor
+
+  addPin(){
+    var pin = {
+      image: "../assets/imgs/here.png",
+    }
+    this.pins.push(pin);
+  }
 
   addItem(newName: string, newDate: string, newStatus: string, newDistance: number, newTime: number, newImage: string){
     var item = {

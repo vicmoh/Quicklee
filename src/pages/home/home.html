@@ -16,7 +16,13 @@
     .transparent{
       opacity: 0.9;
     }
+    .pin{width: 50px; height: 80px}
+    .location1{position: absolute;top: 50%;left: 50%;}
   </style>
+
+  <!-- <section *ngFor="let pin of pins"> -->
+    <img round src="../assets/imgs/here.png" class="location1 pin">
+  <!-- </section> -->
 
   <ion-scroll scrollX="true" scrollY="true" zoom="true" overflow-scroll="false" class="scroll-view mapSize" min-zoom="1" maxZoom="10">
     <img round src="../assets/imgs/mapHD.png" class="mapSize">    
