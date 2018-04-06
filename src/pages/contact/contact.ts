@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { FindFriendPage } from '../find-friend/find-friend';
+import { ChatPage } from '../chat/chat';
 
 @Component({
   selector: 'page-contact',
@@ -9,6 +11,7 @@ export class ContactPage {
   //vars
   items: any[];
   item: any;
+  
 
   //constructor
   constructor(public navCtrl: NavController) {
@@ -39,4 +42,13 @@ export class ContactPage {
     };
     return item;
   }//end func
+
+  gotToFindFriend(){
+    this.navCtrl.push(FindFriendPage);
+  }
+
+  goToChat(){
+    this.navCtrl.push(ChatPage);
+  }
+
 }

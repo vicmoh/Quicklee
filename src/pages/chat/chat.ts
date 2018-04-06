@@ -24,10 +24,16 @@ export class ChatPage {
   listOfTexts: any[];
   message: string;
   text: any;
+  listOfEvents: any[];
+  person: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
       public actionSheetCtrl: ActionSheetController, public alertCtrl: AlertController) {
     this.listOfTexts = [];
+    this.listOfEvents = [];
+    var personJsonString = localStorage.getItem('person');
+    console.log("json person string = " + personJsonString);
+    this.person = JSON.parse(personJsonString);
   }
 
   ionViewDidLoad() {
@@ -56,7 +62,7 @@ export class ChatPage {
 
   presentActionSheet() {
     let actionSheet = this.actionSheetCtrl.create({
-      title: 'Modify your album',
+      title: 'Option',
       buttons: [{
           text: 'Add Event',
           role: 'destructive',
@@ -93,7 +99,7 @@ export class ChatPage {
   showPromptEvent() {
     let prompt = this.alertCtrl.create({
       title: 'Add Event',
-      message: "Enter the name of you event, and we will automatically find the best time for you",
+      message: "Enter your event, and we will automatically find the best time for you",
       inputs: [{
         name: 'event',
         placeholder: 'Event'
@@ -107,12 +113,19 @@ export class ChatPage {
         text: 'Save',
         handler: data => {
           console.log('Saved clicked');
+          console.log("data.event = " + data.event)
+          this.refresh();
+          this.listOfEvents.push(data.event);
         }
       }]
     });
     prompt.present();
   }//end func
 
-  
+  refresh(){
+    setTimeout(() => {
+      this.scroll.scrollToBottom(300);
+    }, 1000);
+  }
 
 }

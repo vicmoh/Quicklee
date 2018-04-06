@@ -15,6 +15,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
+import { FindFriendPage } from '../pages/find-friend/find-friend';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { SignupPage } from '../pages/signup/signup';
     LoginPage,
     MessagesPage,
     ChatPage,
-    SignupPage
+    SignupPage,
+    FindFriendPage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,8 @@ import { SignupPage } from '../pages/signup/signup';
     LoginPage,
     MessagesPage,
     ChatPage,
-    SignupPage
+    SignupPage,
+    FindFriendPage
   ],
   providers: [
     StatusBar,

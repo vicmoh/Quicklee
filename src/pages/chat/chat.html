@@ -13,7 +13,17 @@
 <ion-content #scroll padding>
   <!-- message content -->
 
-  <style>.textToRight{text-align: right;}</style>
+  <style>
+    .textToRight{text-align: right;}
+    .textEventColor{
+      position:relative;
+      padding:0px 20px;
+      color:white; 
+      background: orange;
+      border-radius:25px;
+      float: right;
+    }
+  </style>
 
   <div>
     <p class="textToRight">Me, 5/1/18, 3h ago</p>
@@ -71,7 +81,15 @@
     <div class="clear"></div>
   </div>
 
-
+  <div *ngFor="let event of listOfEvents">
+    <p class="textToRight">Event, 5/1/18, 1m ago</p>
+    <div class="textEventColor">
+      <p><b>{{person?.firstName}} {{person?.lastName}} has added event on Saturday at 9pm</b></p>
+      <p>Event: {{event}}</p>
+      <p>Number of confirm: 1</p>
+    </div>
+    <div class="clear textEventColor"></div>
+  </div>
 
 </ion-content>
 

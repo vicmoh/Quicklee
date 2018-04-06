@@ -1,0 +1,50 @@
+<!--
+  Generated template for the FindFriendPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Find Friends</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <style>
+    .mapSize{
+      object-fit: cover;
+      height: 700px;
+      width: 700px;
+      position: fixed;
+      z-index: -2;
+    }
+    .pin{width: 50px; height: 50px}
+    .location1{position: absolute;top: 50px;left: 50px;}
+    .location2{position: absolute;top: 230px;left: 70px;}
+    .location3{position: absolute;top: 100px;left: 200px;}
+  </style>
+
+  <!-- <img round src="../assets/imgs/pin.png" class="location1 pin">
+  <img round src="../assets/imgs/pin.png" class="location2 pin">
+  <img round src="../assets/imgs/pin.png" class="location3 pin">   -->
+  <img  *ngFor="let pin of pins" round [src]="pin?.image" [class]="pin?.location">
+
+  <ion-scroll scrollX="true" scrollY="true" zoom="true" overflow-scroll="false" class="scroll-view mapSize" min-zoom="1" maxZoom="10">
+    <img round src="../assets/imgs/mapHD.png" class="mapSize">    
+  </ion-scroll>
+</ion-content>
+
+<!-- button for finding a friend -->
+<ion-footer>
+  <ion-item (click)="presentActionSheet()">
+    <button ion-button round class="centerContent">Click here to find friends</button>
+  </ion-item>
+  <ion-item>
+    <ion-label>Distance, {{distance}}m</ion-label>
+    <ion-range min="0" max="100" step="10" snaps="true" color="primary" [(ngModel)]="distance"></ion-range>
+  </ion-item>
+</ion-footer>

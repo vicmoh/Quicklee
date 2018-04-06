@@ -30,7 +30,7 @@
         </button>
       </ion-col>
       <ion-col>
-        <button ion-button icon-left clear small>
+        <button ion-button icon-left clear small (click)="goToChat()">
           <ion-icon name="text"></ion-icon>
           <div>Messege</div>
         </button>
@@ -51,7 +51,7 @@
 <!-- button for finding a friend -->
 <ion-footer>
   <div class="centerContent">
-    <button ion-button round>Find Friend</button>
+    <button ion-button round (click)="gotToFindFriend()">Find Friend</button>
   </div>
 </ion-footer>
   
