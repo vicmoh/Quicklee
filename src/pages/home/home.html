@@ -12,7 +12,10 @@
       width: 700px;
       position: fixed;
       z-index: -2;
-    }  
+    }
+    .transparent{
+      opacity: 0.9;
+    }
   </style>
 
   <ion-scroll scrollX="true" scrollY="true" zoom="true" overflow-scroll="false" class="scroll-view mapSize" min-zoom="1" maxZoom="10">
@@ -22,7 +25,8 @@
 
 <!-- button for finding a friend -->
 <ion-footer>
-  <ion-item class="centerContent">
+
+  <ion-item class="centerContent transparent">
     <ion-label>Available</ion-label>
     <ion-toggle [(ngModel)]="privacyMode"></ion-toggle>
   </ion-item>

@@ -12,7 +12,6 @@
 
 </ion-header>
 
-
 <ion-content>
   <style>
     /* for the pin */
@@ -29,30 +28,53 @@
     .location3{position: absolute;top: 100px;left: 200px;}
 
     /* for the avatar */
-    .avatarSize{
+    .profileSize{
       height: 300px;
       width: 300px;
       position: fixed;
+      z-index: 1000;
+      background: blue;
+      /* color($colors, primary) */
+      border-radius: 30%;
+    }
+    .profilePrositon{
+      position: fixed;
+      z-index: 1000;
+      opacity: 0.9;
+    }
+    .transparent{
+      opacity: 0.9;
     }
   </style>
+
+  <!-- show the profile -->
+  <ion-item *ngFor="let profile of profiles" class="profilePrositon">
+    <ion-avatar item-start round>
+      <img [src]="'../assets/imgs/avatar/' + profile?.image + '.png'">
+    </ion-avatar>
+    <h1>{{profile?.name}}</h1>
+    <p>{{profile?.status}}</p>
+    <ion-col>
+      <button ion-button icon-left clear small (click)="closeProfile()">Cancel</button>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small>Accept</button>
+    </ion-col>
+  </ion-item>
 
   <!-- <img round src="../assets/imgs/pin.png" class="location1 pin">
   <img round src="../assets/imgs/pin.png" class="location2 pin">
   <img round src="../assets/imgs/pin.png" class="location3 pin">   -->
-  <img  *ngFor="let pin of pins" round [src]="pin?.image" [class]="pin?.location">
+  <img  *ngFor="let pin of pins" round [src]="pin?.image" [class]="pin?.location" (click)="getPerson1()">
 
   <ion-scroll scrollX="true" scrollY="true" zoom="true" overflow-scroll="false" class="scroll-view mapSize" min-zoom="1" maxZoom="10">
     <img round src="../assets/imgs/mapHD.png" class="mapSize">    
   </ion-scroll>
 </ion-content>
 
-<ion-content class="avatarSize" (click)="showPerson()">
-  <p>name is here</p>
-</ion-content>
-
 <!-- button for finding a friend -->
 <ion-footer>
-  <ion-item (click)="presentActionSheet()">
+  <ion-item class="transparent" (click)="presentActionSheet()">
     <button ion-button round class="centerContent">Click here to find friends</button>
   </ion-item>
   <ion-item>

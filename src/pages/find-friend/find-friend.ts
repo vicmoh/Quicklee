@@ -21,33 +21,62 @@ export class FindFriendPage {
   testRadioOpen: boolean;
   testRadioResult;
   pins: any[];
-  avatar: any[];
+  profiles: any[];
+  currentProfile: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public actionSheetCtrl: ActionSheetController, public alertCtrl: AlertController) {
     this.pins = [];
+    this.profiles = [];
     this.distance = 30;
+    this.currentProfile = {};
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FindFriendPage');
   }
 
-  addPin(newLocation){
+  addPin(newLocation, newFunc){
     var pin = {
       image: "../assets/imgs/pin.png",
-      location: newLocation
+      location: newLocation,
+      function: newFunc
     }
     this.pins.push(pin);
   }
 
-  showPerson(){
-    
+  showPerson(newImage, newName, newStatus){
+    var profile = {
+      image: newImage,
+      name: newName,
+      status: newStatus,
+    };
+    this.profiles.push(profile);
+    // this.currentProfile = profile;
+  }
+
+  getPerson1(){
+    this.profiles.pop();
+    this.showPerson("avatar-rey", "Rey", "Working on Angel of Death");
+  }
+
+  getPerson2(){
+    this.profiles.pop();
+    this.showPerson("avatar-rey", "Rey", "Working on Angel of Death");
+  }
+
+  getPerson3(){
+    this.profiles.pop();
+    this.showPerson("avatar-rey", "Rey", "Working on Angel of Death");
+  }
+
+  closeProfile(){
+    this.profiles.pop();
   }
 
   presentActionSheet() {
     let actionSheet = this.actionSheetCtrl.create({
-      title: 'Choose catagories',
+      title: 'Choose Catagories',
       buttons: [{
           text: 'Social',
           handler: () => {
@@ -124,9 +153,9 @@ export class FindFriendPage {
       handler: data => {
         this.testRadioOpen = false;
         this.testRadioResult = data;
-        this.addPin("location1 pin");
-        this.addPin("location2 pin");
-        this.addPin("location3 pin");
+        this.addPin("location1 pin", "getPerson1()");
+        this.addPin("location2 pin", "getPerson2()");
+        this.addPin("location3 pin", "getPerson3()");
       }
     });
     alert.present();
