@@ -41,7 +41,7 @@ export class FindFriendPage {
     this.pins.push(pin);
   }
 
-  showAvatar(){
+  showPerson(){
     
   }
 
