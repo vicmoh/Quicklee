@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>Yoda</ion-title>
+    <ion-title>Chemistry Group Chat</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -19,7 +19,7 @@
       position:relative;
       padding:0px 20px;
       color:white; 
-      background: orange;
+      background: black;
       border-radius:25px;
       float: right;
     }
@@ -87,19 +87,20 @@
     <div class="textEventColor">
       <p><b>Hello, {{person?.firstName}} {{person?.lastName}}, based on the schedule of you and your peers
         I found an open spot on <u>Saturday at 9pm</u>, would you like me to confirm this?</b></p>
-      <p>Event: {{event}}</p>
-      <p>Number of confirm: 0</p>
+      <p>Event: {{event?.event}}</p>
+      <p>Location: {{event?.location}} </p>
+      <p>Number of peers confirmed: 0</p>
       <!-- button for event -->
       <style>
         .eventColor{color: white !important;}
         .centerContent{text-align: center; margin: auto; margin: auto;}
       </style>
-      <div class="centerContent">
+      <div class="centerContent" *ngFor="let button of showButtonEvent">
         <ion-col>
-          <button ion-button icon-left clear small class="eventColor">Accept</button>
+          <button ion-button icon-left clear small class="eventColor" (click)="acceptEvent()">{{button?.accept}}</button>
         </ion-col>
         <ion-col>
-          <button ion-button icon-left clear small class="eventColor">Decline</button>
+          <button ion-button icon-left clear small class="eventColor">{{button?.decline}}</button>
         </ion-col>
       </div>
     </div>

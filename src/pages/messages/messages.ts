@@ -47,7 +47,7 @@ export class MessagesPage {
     recentItem = this.additem("avatar-leia", "Leia", "You're My Only Hope", "I've placed information vital to the survival");
     this.recentItems.push(recentItem);
     console.log(recentItem);
-    recentItem = this.additem("avatar-yoda", "Yoda", "Size matters not", "Do or do not. There is no try");
+    recentItem = this.additem("avatar-yoda", "Chemistry Group Chat", "Size matters not", "Do or do not. There is no try");
     this.recentItems.push(recentItem);
     console.log(recentItem);
   }

@@ -26,11 +26,13 @@ export class ChatPage {
   text: any;
   listOfEvents: any[];
   person: any;
+  showButtonEvent: any[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
       public actionSheetCtrl: ActionSheetController, public alertCtrl: AlertController) {
     this.listOfTexts = [];
     this.listOfEvents = [];
+    this.showButtonEvent = [];
     var personJsonString = localStorage.getItem('person');
     console.log("json person string = " + personJsonString);
     this.person = JSON.parse(personJsonString);
@@ -41,6 +43,20 @@ export class ChatPage {
       this.scroll.scrollToBottom(300);
     }, 1000);
     console.log('ionViewDidLoad ChatPage');
+  }
+
+  acceptEvent(){
+    this.showAccept();
+    this.showButtonEvent.pop();
+  }
+
+  showAccept() {
+    let alert = this.alertCtrl.create({
+      title: 'Event',
+      subTitle: 'Event has been confirmed!',
+      buttons: ['OK']
+    });
+    alert.present();
   }
 
   sendMessage(){
@@ -103,6 +119,9 @@ export class ChatPage {
       inputs: [{
         name: 'event',
         placeholder: 'Event'
+      },{
+        name: 'location',
+        placeholder: 'Location'
       }],
       buttons: [{
         text: 'Cancel',
@@ -115,7 +134,8 @@ export class ChatPage {
           console.log('Saved clicked');
           console.log("data.event = " + data.event)
           this.refresh();
-          this.listOfEvents.push(data.event);
+          this.listOfEvents.push(data);
+          this.showButtonEvent.push({accept: "Accept", decline: "Decline"});
         }
       }]
     });
