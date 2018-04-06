@@ -17,7 +17,7 @@ import { ActionSheetController } from 'ionic-angular';
 })
 export class FindFriendPage {
 
-  distance: any[];
+  distance: any;
   testRadioOpen: boolean;
   testRadioResult;
   pins: any[];
@@ -26,6 +26,7 @@ export class FindFriendPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public actionSheetCtrl: ActionSheetController, public alertCtrl: AlertController) {
     this.pins = [];
+    this.distance = 30;
   }
 
   ionViewDidLoad() {
