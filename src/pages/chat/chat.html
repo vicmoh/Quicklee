@@ -81,14 +81,28 @@
     <div class="clear"></div>
   </div>
 
+  <!-- ai event -->
   <div *ngFor="let event of listOfEvents">
     <p class="textToRight">Event, 5/1/18, 1m ago</p>
     <div class="textEventColor">
-      <p><b>{{person?.firstName}} {{person?.lastName}} has added event on Saturday at 9pm</b></p>
+      <p><b>Hello, {{person?.firstName}} {{person?.lastName}}, based on the schedule of you and your peers
+        I found an open spot on <u>Saturday at 9pm</u>, would you like me to confirm this?</b></p>
       <p>Event: {{event}}</p>
       <p>Number of confirm: 0</p>
+      <!-- button for event -->
+      <style>
+        .eventColor{color: white !important;}
+        .centerContent{text-align: center; margin: auto; margin: auto;}
+      </style>
+      <div class="centerContent">
+        <ion-col>
+          <button ion-button icon-left clear small class="eventColor">Accept</button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear small class="eventColor">Decline</button>
+        </ion-col>
+      </div>
     </div>
-    <div class="clear textEventColor"></div>
   </div>
 
 </ion-content>
